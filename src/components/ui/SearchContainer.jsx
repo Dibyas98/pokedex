@@ -4,10 +4,12 @@ import Button from '../ui/Button'
 import { IoMdSearch } from "react-icons/io";
 import { AllFunc } from '../Context/Store'
 import { Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 
 function SearchContainer() {
-  const { OnclickSearchButton } = useContext(AllFunc)
+  const { OnclickSearchButton,search } = useContext(AllFunc)
+  const navigate = useNavigate()
     
   return (
     <div className=' w-full flex gap-2 justify-center py-5 px-3 md:w-1/2 xl:1/2'>
@@ -18,7 +20,7 @@ function SearchContainer() {
         <Button name={'Search'} className={'border button-7 '} event={OnclickSearchButton}></Button>
       </div>
       <div className='xl:hidden w-8 border flex justify-center items-center' onClick={OnclickSearchButton}>
-        <button onClick={OnclickSearchButton} >
+        <button onClick={()=> navigate(`/${search}`)} >
           <Search></Search>
         </button>
       </div>
