@@ -55,7 +55,7 @@ let offset = 10;
     }
     async function InitialData(url) {
         try {
-            // setLoad(true)
+            setLoad(true)
             
             setTimeout(async () => {
                 const fetch = await FetchData(url);

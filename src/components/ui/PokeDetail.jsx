@@ -32,7 +32,7 @@ function PokeDetail({Pokemon}) {
     return (
         <>
         <div className='w-full  flex items-center flex-col px-5 xl:p-0 '>
-        {load? <div className='flex justify-center'><Loading className='w-full  '></Loading></div>:<></>}
+        {/* {load? <div className='flex justify-center'><Loading className='w-full  '></Loading></div>:<></>} */}
             {
                 Pokemon && <div className='w-full  md:w-full xl:w-3/5  h-80  flex  items-center flex-col relative rounded-t-2xl ' >
                     <div className='w-full  xl:w-full h-full border-2  flex justify-end rounded-t-2xl' style={Pokemon ? { backgroundColor: backColor[Pokemon.types[0].type.name] } : null}>
