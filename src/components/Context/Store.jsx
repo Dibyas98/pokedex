@@ -18,7 +18,7 @@ let offset = 10;
         if(search.length == 0){
             return
         }
-        // setPokemon(false)
+        setPokemon(false)
         // // setLoad(true)
         // setSearchButton(true)
         const data = await handelSinglePageApiData(search)
@@ -104,14 +104,16 @@ let offset = 10;
 
     const handelSinglePageApiData= async(name)=>{
         // setLoad(true)
-        // setPokemon(false)
+        setPokemon(false)
         const na = name.toLowerCase()
         try {
-            const pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${na}`)
+            setTimeout(async() => {
+                const pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${na}`)
             setPokemon(pokemon.data)
             setTab('about')
             setLoad(false)
             setError(false)
+            }, 1000);
 
         } catch (error) {
             setError(error.response.data)
