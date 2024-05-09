@@ -20,7 +20,7 @@ function Lainding() {
                 }
                 <FaFilter  onClick={handelFilter}></FaFilter>
             </div>
-            {AllPoke.length>0?<LazyListing></LazyListing>:<></>}
+            {<LazyListing></LazyListing>}
         </div>
     )
 }
