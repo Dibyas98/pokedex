@@ -27,8 +27,6 @@ function PokeDetailLaindingPage() {
     }
   }
   const param = useParams()
-  console.log(Pokemon);
-  console.log(param);
     useEffect(() => {
         handelSinglePageApiData(param.name)
     }, [load])

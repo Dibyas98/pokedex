@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid'
 import React from 'react'
 
 function About(props) {
@@ -15,7 +16,7 @@ function About(props) {
                     <p>{props.height}</p>
                     <p>{props.weight}</p>
                     <p className='flex gap-1'>{
-                        props.ability.map((ele) => <span>{ele.ability.name}, </span>)
+                        props.ability.map((ele) => <span key={nanoid()}>{ele.ability.name}, </span>)
                     }</p>
                     {/* <p>{props.ability.}</p> */}
                 </div>

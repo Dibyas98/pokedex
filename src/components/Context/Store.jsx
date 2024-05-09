@@ -18,13 +18,13 @@ let offset = 10;
         if(search.length == 0){
             return
         }
-        setPokemon(false)
-        // setLoad(true)
-        setSearchButton(true)
+        // setPokemon(false)
+        // // setLoad(true)
+        // setSearchButton(true)
         const data = await handelSinglePageApiData(search)
-        setPokemon(data)
-        setLoad(false);
-        setSearchButton(false)
+        // // setPokemon(data)
+        // setLoad(false);
+        // setSearchButton(false)
 
 
     }
@@ -41,7 +41,7 @@ let offset = 10;
     async function FilterPokeMon (url){
         try {
             setLoad(true);
-            const fetch = await FetchData(`https://pokeapi.co/api/v2/${url}/`);
+            const fetch = await FetchData(`https://pokeapi.co/api/v2/${url.toLowerCase()}/`);
             const AllPokeList = await Promise.all(fetch.results.map(async (ele) =>{
                 const da = await FetchData(ele.url);
                 return da
@@ -100,12 +100,14 @@ let offset = 10;
 
     const[Tab,setTab] = useState('about')
     const[Pokemon,setPokemon] = useState(false)
+
+
     const handelSinglePageApiData= async(name)=>{
-        console.log(name);
         // setLoad(true)
-        setPokemon(false)
+        // setPokemon(false)
+        const na = name.toLowerCase()
         try {
-            const pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+            const pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${na}`)
             setPokemon(pokemon.data)
             setTab('about')
             setLoad(false)
@@ -135,7 +137,6 @@ let offset = 10;
         
 
     }else if(book){
-        console.log(book);
         const fil = bookmark.filter((ele) => arg.id!= ele.id);
         setBookMark(fil)
         
