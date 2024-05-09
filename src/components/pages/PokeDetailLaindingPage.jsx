@@ -44,7 +44,7 @@ function PokeDetailLaindingPage() {
        {Pokemon && <div className='w-full md:w-3/5 xl:w-1/3 flex min-h-screen md:min-h-fit  xl:min-h-fit'>
             <PokeDetail Pokemon={Pokemon}></PokeDetail>
         </div>}
-        {!compare && Pokemon && <div className='hidden md:flex xl:flex  gap-2 items-center absolute top-0 md:-top-[3.2rem] md:right-24 xl:-top-[3.2rem] xl:right-1/4' onClick={handelompare}>
+        {!compare && Pokemon && <div className='hidden md:flex xl:flex  gap-2 items-center absolute top-0 md:-top-[3.2rem] md:right-24 xl:-top-[3.5rem] xl:right-1/5' onClick={handelompare}>
               {/* <p className='font-bold text-2xl text-red-700'>Or</p> */}
         <button className={'button-3 '}>Compare</button>
         </div>}

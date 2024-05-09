@@ -13,6 +13,11 @@ function SearchContainer() {
     
   return (
     <div className=' w-full flex gap-2 justify-center py-5 px-3 md:w-1/2 xl:1/2'>
+      <div>
+        <Link to={'/poke/bookmark'}>
+        <button className='button-3'>Bookmark List</button>
+        </Link>
+      </div>
       <div className='w-full px-1 xl:w-1/2'>
         <Input type={'text'} placeholder={'PokeMon Name'} ></Input>
       </div>

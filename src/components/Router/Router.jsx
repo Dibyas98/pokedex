@@ -6,6 +6,7 @@ import Lainding from '../pages/Lainding'
 import PokeDetail from '../ui/PokeDetail'
 import PokeDetailLaindingPage from '../pages/PokeDetailLaindingPage'
 import Layour from '../pages/Layour'
+import BookMarkPage from '../pages/BookMarkPage'
 
 function Router() {
     const route = createBrowserRouter([
@@ -21,6 +22,9 @@ function Router() {
             path:'/:name',
             element:<PokeDetailLaindingPage></PokeDetailLaindingPage>
             
+        },{
+          path:'/poke/bookmark',
+          element:<BookMarkPage></BookMarkPage>
         }
         ]
       }
