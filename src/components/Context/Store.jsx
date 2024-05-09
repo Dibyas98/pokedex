@@ -18,15 +18,13 @@ let offset = 10;
         if(search.length == 0){
             return
         }
-        setPokemon(false)
+        // setPokemon(false)
         // setLoad(true)
-        setSearchButton(true);
-        setTimeout(async () => {
-            const data = await handelSinglePageApiData(search)
-            setLoad(false);
-            setSearchButton(false)
-            console.log(data);
-        }, 2000);
+        // setSearchButton(true)
+        //     const data = await handelSinglePageApiData(search)
+        //     setLoad(false);
+        //     setSearchButton(false)
+        
 
     }
 
@@ -110,6 +108,7 @@ let offset = 10;
             setTab('about')
             setLoad(false)
             setError(false)
+
         } catch (error) {
             setError(error)
         }

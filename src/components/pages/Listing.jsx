@@ -19,7 +19,7 @@ function Listing() {
         <div className='w-full h-fit b flex flex-wrap px-5 gap-5 md:gap-10 justify-center xl:px-8 xl:flex-row xl:pt-4 '>
             {
                 AllPoke.map((ele, ind) => {
-                    return <Link to={`${ele.forms[0].name}/${ele.id}`} className='w-full md:w-2/6 xl:w-1/6 h-72 ' key={ele.id}><div className='w-full h-full' >
+                    return <Link to={`${ele.forms[0].name}`} className='w-full md:w-2/6 xl:w-1/6 h-72 ' key={ele.id}><div className='w-full h-full' >
                         <PokeCard form={ele.forms[0]} img={ele.sprites.other['official-artwork'].front_default}></PokeCard>
                     </div></Link>
                 })

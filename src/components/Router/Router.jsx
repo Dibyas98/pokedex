@@ -18,7 +18,7 @@ function Router() {
             element:<Suspense fallback={''}><Lainding></Lainding></Suspense>
         },
         {
-            path:'/:name/:id',
+            path:'/:name',
             element:<PokeDetailLaindingPage></PokeDetailLaindingPage>
             
         }
