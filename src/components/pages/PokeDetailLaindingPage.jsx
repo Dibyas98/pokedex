@@ -27,9 +27,11 @@ function PokeDetailLaindingPage() {
     }
   }
   const param = useParams()
+  console.log(Pokemon);
+  console.log(param);
     useEffect(() => {
         handelSinglePageApiData(param.name)
-    }, [])
+    }, [load])
     useEffect(() =>{
       setCompareData()
       setCompare(false)
@@ -39,14 +41,14 @@ function PokeDetailLaindingPage() {
   return (
     <div className='w-full flex justify-center items-center flex-col md:flex-row xl:flex-row min-h-fit relative p-2 '>
       {!compare && <div className='flex md:hidden xl:hidden pb-2  gap-2 items-center ' onClick={handelompare}>
-        <Button name={'Compare'} className={'button-3 '}></Button>
+      <button className={'button-3 '}>Compare</button>
         </div>}
-        <div className='w-full md:w-3/5 xl:w-1/3 flex min-h-screen md:min-h-fit  xl:min-h-fit'>
+       {Pokemon && <div className='w-full md:w-3/5 xl:w-1/3 flex min-h-screen md:min-h-fit  xl:min-h-fit'>
             <PokeDetail Pokemon={Pokemon}></PokeDetail>
-        </div>
-        {!compare && <div className='hidden md:flex xl:flex  gap-2 items-center absolute top-0 md:-top-[3.2rem] md:right-24 xl:-top-[3.2rem] xl:right-1/4' onClick={handelompare}>
+        </div>}
+        {!compare && Pokemon && <div className='hidden md:flex xl:flex  gap-2 items-center absolute top-0 md:-top-[3.2rem] md:right-24 xl:-top-[3.2rem] xl:right-1/4' onClick={handelompare}>
               {/* <p className='font-bold text-2xl text-red-700'>Or</p> */}
-        <Button name={'Compare'} className={'button-3 '}></Button>
+        <button className={'button-3 '}>Compare</button>
         </div>}
         {compare && <div className='w-full md:w-3/5 xl:w-1/3 flex  min-h-fit flex-row-reverse'>
           <ImCross className='' onClick={handelompare}></ImCross>

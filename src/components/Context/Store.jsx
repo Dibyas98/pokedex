@@ -18,13 +18,14 @@ let offset = 10;
         if(search.length == 0){
             return
         }
-        // setPokemon(false)
+        setPokemon(false)
         // setLoad(true)
-        // setSearchButton(true)
-        //     const data = await handelSinglePageApiData(search)
-        //     setLoad(false);
-        //     setSearchButton(false)
-        
+        setSearchButton(true)
+        const data = await handelSinglePageApiData(search)
+        setPokemon(data)
+        setLoad(false);
+        setSearchButton(false)
+
 
     }
 
@@ -34,7 +35,7 @@ let offset = 10;
             const data = await axios.get(url);
             return data.data
         } catch (error) {
-            return error
+            setError(error.response.data)
         }
     }
     async function FilterPokeMon (url){
@@ -49,12 +50,12 @@ let offset = 10;
            setAllPoke(AllPokeList)
            setError(false)
         } catch (error) {
-            setError(error)
+            setError(error.response.data)
         }
     }
     async function InitialData(url) {
         try {
-            setLoad(true)
+            // setLoad(true)
             
             setTimeout(async () => {
                 const fetch = await FetchData(url);
@@ -74,7 +75,7 @@ let offset = 10;
             }, 2000);
             setError(false)
         } catch (error) {
-            setError(error)
+            setError(error.response.data)
         }
     }
     useEffect(() => {
@@ -91,7 +92,7 @@ let offset = 10;
         try {
             setError(false)
         } catch (error) {
-            setError(error)
+            setError(error.response.data)
         }
     }
     
@@ -100,6 +101,7 @@ let offset = 10;
     const[Tab,setTab] = useState('about')
     const[Pokemon,setPokemon] = useState(false)
     const handelSinglePageApiData= async(name)=>{
+        console.log(name);
         // setLoad(true)
         setPokemon(false)
         try {
@@ -110,7 +112,7 @@ let offset = 10;
             setError(false)
 
         } catch (error) {
-            setError(error)
+            setError(error.response.data)
         }
     }
     const handelTabs = (arg)=>{
