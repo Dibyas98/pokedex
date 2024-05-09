@@ -19,7 +19,7 @@ let offset = 10;
             return
         }
         setPokemon(false)
-        setLoad(true)
+        // setLoad(true)
         setSearchButton(true);
         setTimeout(async () => {
             const data = await handelSinglePageApiData(search)
@@ -162,7 +162,8 @@ let offset = 10;
         handelBookMarkList,
         bookmark,
         FilterPokeMon,
-        error
+        error,
+        setError,
     }
     return (
         <AllFunc.Provider value={contextValue}>
